@@ -45,6 +45,7 @@ section{
     border: 2px solid black;
     border-radius: 4px;
     padding: 20px;
+    background-color: white;
 }
 
 .texts{
@@ -53,8 +54,56 @@ section{
 
 .texts h1 {
     font-size: 50px;
+    font-weight: 700;
 }
 
 .texts p {
     font-size: 18px;
+}
+
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+label {
+    display: block;
+    text-indent: -9999px;
+    height: 26px;
+    width: 60px;
+    background-color: rgb(171, 171, 171);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+label::after{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: black;
+    top: 52%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: .3s ease background-color;
+}
+
+input:checked + label {
+    background-color: black;
+    border: 2px solid white;
+}
+
+input:checked + label::after {
+    background-color: whitesmoke;
+    left: calc(100% - 25px);
+
 }
